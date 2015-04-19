@@ -23,7 +23,7 @@ C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\S
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\obj\x86\Debug\TestGame.csprojResolveAssemblyReference.cache
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\obj\x86\Debug\TestGame.exe
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\obj\x86\Debug\TestGame.pdb
-C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\GMSharp.dll
-C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\GMSharp.pdb
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Resources\errorfont.xnb
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Resources\errorfontheader.xnb
+C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Windows.dll
+C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Windows.pdb
