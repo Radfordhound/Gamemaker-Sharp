@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGame", "TestGame.csproj", "{199BBCED-9560-467F-BD9C-18895F940036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMSharp", "..\GMSharp\Windows\Windows.csproj", "{583D5699-67BF-4CE5-B3B1-DFE2B1F54485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMSharp", "..\GMSharp\GMSharp.csproj", "{583D5699-67BF-4CE5-B3B1-DFE2B1F54485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

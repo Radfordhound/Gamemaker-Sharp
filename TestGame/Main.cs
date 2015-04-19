@@ -14,7 +14,7 @@ namespace TestGame
         public Main()
         {
             Resources.Define();
-            GML.room_goto(0);
+            GML.room_goto(1);
         }
     }
 }

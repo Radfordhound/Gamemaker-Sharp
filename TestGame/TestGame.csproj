@@ -58,7 +58,7 @@
     <MonoGameContentReference Include="Resources\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GMSharp\Windows\Windows.csproj">
+    <ProjectReference Include="..\GMSharp\GMSharp.csproj">
       <Project>{583d5699-67bf-4ce5-b3b1-dfe2b1f54485}</Project>
       <Name>GMSharp</Name>
     </ProjectReference>
