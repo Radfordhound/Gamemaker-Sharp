@@ -1,0 +1,11 @@
+﻿<!--GameMaker-Sharp Room File-->
+<Room name = "rm_main" width="1024" height="768" fps="30">
+  <!--Objects-->
+  <Objects>
+    <Object x="0" y="0" id="1" sx="1" sy="1" rot="0" alpha="0" col="FFFFFF"/>
+  </Objects>
+  <!--Tiles-->
+  <!--Backgrounds-->
+  <!--Views-->
+  <Views enabled="false"/>
+</Room>

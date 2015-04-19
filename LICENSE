@@ -1,8 +1,9 @@
 Game Maker is the intellectual property of YoYo Games Ltd. I do not claim otherwise, nor do I have any malicious intent.
 
-No parts of Game Maker are included within Gamemaker-Sharp. It is all custom coding made from the ground up in MonoGame.
-And, of course, I'm legally allowed to place a license on my own work. Hence I can proudly say that the following license
-applies to this project in it's entirety.
+No parts of Game Maker are included within Gamemaker-Sharp. While the syntax is extremely similar (It was meant to be that
+way.), it is all custom coding made from the ground up in MonoGame. And, of course, I'm legally allowed to place a license on
+my own work. Hence I can proudly say that the following license applies to this project in it's entirety. (Except maybe MonoGame.
+Still not sure how that works 100% yet. :|)
 
 
 
@@ -28,3 +29,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+The font used in this software, as well as it's logos, is "Webly Sleek UI" by Mat Douglas, which is under ...er, well, I'm not
+quite sure what license it's under. :| As indicated here: "http://www.dafont.com/weblysleek-ui.font", it's un-clear which license it's
+under exactly ("Public domain/GPL/OPF" ...Okay?), but from the information I've gathered, all the licenses various sites say this font
+is under say it *should* be useable.
+
+If you fear of copyright issues with the included font, change icon.ico to a custom, copy-right free icon, set "GMSharp.GMSharp.useerrorfont"
+to false in your code and delete "errorfont.xnb" and "errorfontheader.xnb" within your game's "Resources" folder. Do note, however, that this
+will prevent "friendly" error messages from showing, and instead will cause your game to start acting pretty weird when it encounters an error.
