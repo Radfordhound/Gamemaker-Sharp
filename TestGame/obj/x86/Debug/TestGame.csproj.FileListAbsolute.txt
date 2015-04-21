@@ -27,3 +27,4 @@ C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\G
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\GMSharp.pdb
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Resources\errorfont.xnb
 C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Resources\errorfontheader.xnb
+C:\Users\Graha_000\Documents\GitHub\Gamemaker-Sharp\TestGame\bin\Windows\Debug\Resources\Sprites\spr_playerfrm1.png

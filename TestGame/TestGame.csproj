@@ -53,12 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Resources\Sprites\spr_playerfrm1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Resources\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GMSharp\Windows\GMSharp.csproj">
+    <ProjectReference Include="..\GMSharp\Windows\GMSharp%28Windows%29.csproj">
       <Project>{583d5699-67bf-4ce5-b3b1-dfe2b1f54485}</Project>
       <Name>GMSharp</Name>
     </ProjectReference>
@@ -74,6 +77,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using GMSharp.Resources;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using Microsoft.Xna.Framework.Content; //Let's take some time to reflect...
 
 namespace GMSharp
 {
@@ -36,6 +39,11 @@ namespace GMSharp
         /// </summary>
         public static string errorstrng = "";
 
+        /// <summary>
+        /// The current directory the game is located in
+        /// </summary>
+        public static string current_dir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+
         
     }
 
@@ -50,10 +58,11 @@ namespace GMSharp
     public class GMSharpGame : Game
     {
         public GraphicsDeviceManager graphics;
-        public SpriteBatch spriteBatch;
+        public static SpriteBatch spriteBatch;
         public static List<Room> rooms = new List<Room>();
         SpriteFont errorfont;
         SpriteFont errorfontheader;
+        public static ContentManager cntnt;
 
         public GMSharpGame(): base()
         {
@@ -69,7 +78,7 @@ namespace GMSharp
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            //
 
             base.Initialize();
         }
@@ -82,6 +91,8 @@ namespace GMSharp
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            cntnt = Content;
 
             //Load the error font if needed.
             if (GMSharp.useerrorfont)
@@ -96,6 +107,22 @@ namespace GMSharp
                     Console.WriteLine("ERROR: Error font could not be found! Ignoring...");
                 }
             }
+            
+            this.Start();
+
+            try
+            {
+                rooms[GML.room].Init();
+            }
+            catch (Exception ex)
+            {
+                GML.show_error("Something went wrong whilst initializing room " + GML.room.ToString() + "!", ex, true);
+            }   
+        }
+
+        public virtual void Start()
+        {
+            //
         }
 
         /// <summary>
@@ -122,7 +149,7 @@ namespace GMSharp
             }
             catch (Exception ex)
             {
-                GML.show_error("Something went wrong whilst during this step!",ex, true);
+                GML.show_error("Something went wrong during this step!",ex, true);
             }
 
             base.Update(gameTime);
@@ -167,7 +194,14 @@ namespace GMSharp
             }
             else
             {
-                //TODO: Add rest of drawing code.
+                try
+                {
+                    rooms[GML.room].Draw();
+                }
+                catch (Exception ex)
+                {
+                    GML.show_error("Something went wrong whilst drawing!", ex, true);
+                }
             }
 
             spriteBatch.End();

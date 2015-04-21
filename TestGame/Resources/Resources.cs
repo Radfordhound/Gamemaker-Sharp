@@ -15,6 +15,7 @@ namespace TestGame
         #region Declare (Or "Let the compiler know about.") all your resources here!
 
         #region Sprites
+        public static Sprite spr_player;
         #endregion
 
         #region Sounds
@@ -35,9 +36,6 @@ namespace TestGame
         #region Time Lines
         #endregion
 
-        #region Objects
-        #endregion
-
         #region Rooms
         public static Room rm_main = new Room();
         #endregion
@@ -51,6 +49,7 @@ namespace TestGame
             #region Define (Or "Let the compiler know what goes inside.") all your resources here!
 
             #region Sprites
+            spr_player = new Sprite(new List<string> { "spr_playerfrm1" });
             #endregion
             
             #region Sounds
@@ -69,9 +68,6 @@ namespace TestGame
             #endregion
 
             #region Time Lines
-            #endregion
-
-            #region Objects
             #endregion
 
             #region Rooms

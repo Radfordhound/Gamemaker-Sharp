@@ -11,10 +11,9 @@ namespace TestGame
 {
     public class Main : GMSharpGame
     {
-        public Main()
+        public override void Start()
         {
-            Resources.Define();
-            GML.room_goto(1);
+            Resources.Define(); //Defines your game's resources. Pretty self-explanitory.
         }
     }
 }
