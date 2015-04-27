@@ -1,5 +1,5 @@
 ﻿<div align="center"><img src="https://raw.githubusercontent.com/Radfordhound/Gamemaker-Sharp/master/logos/logo256.png"></img></div>  
-A GML (Short for "Game Maker Language's") wrapper for MonoGame/C# made to help developers more easily migrate their games from Game Maker to Monogame.
+A GML (Short for "Game Maker Language") wrapper for MonoGame/C# made to help developers more easily migrate their games from Game Maker to Monogame.
 
 ##Cut to the chase. I'm new to this. How the heck do I use it? :|
 Check out the [Getting started guide](https://github.com/Radfordhound/Gamemaker-Sharp/wiki/Getting-Started)! :wink:
