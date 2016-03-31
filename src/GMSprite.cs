@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace GMSharp
 {
@@ -59,6 +60,28 @@ namespace GMSharp
             {
                 curfrm = 0;
                 currentframe = (currentframe < frames.Length - 1) ? currentframe + 1 : loopframe;
+            }
+        }
+
+        /// <summary>
+        /// Loads a sprite from a given file.
+        /// </summary>
+        /// <param name="file">The path to the file.. must be within the game's "Content" folder</param>
+        public static void LoadSprite(string file)
+        {
+            string extension = Path.GetExtension(file).ToLower();
+
+            if (extension == ".xml")
+            {
+                //TODO
+            }
+            else if (extension == ".sprite.gmx")
+            {
+                //TODO
+            }
+            else if (extension == ".json")
+            {
+                //TODO
             }
         }
     }

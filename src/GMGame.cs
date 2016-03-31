@@ -6,18 +6,29 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.IO;
+using System.Threading;
 
 namespace GMSharp
 {
     public class GMGame : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public GraphicsDeviceManager graphics;
+        public SpriteBatch spriteBatch;
+
+        public Texture2D splashscreen;
+        public bool contentloaded = false;
+
+        /// <summary>
+        /// The game's sprites. <para />
+        /// Access them like this: sprites["SPRITENAME"] with "SPRITENAME" being the name of the sprite you want to load.
+        /// </summary>
+        public Dictionary<GMSprite, string> sprites = new Dictionary<GMSprite, string>();
 
         public GMGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Resources";
+            Content.RootDirectory = "Content";
         }
 
         /// <summary>
@@ -28,7 +39,10 @@ namespace GMSharp
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Window.Title = GameProperties.gamedisplayname;
+            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = 768;
+            graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -42,7 +56,31 @@ namespace GMSharp
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            if (Directory.Exists(Main.contentpath))
+            {
+                splashscreen = Content.Load<Texture2D>("splashscreen");
+                new Thread(new ThreadStart(LoadContentThreaded)).Start();
+            }
+        }
+
+        /// <summary>
+        /// Loads content on a separate thread, thus allowing the game to do other stuff (such as show a splash screen).
+        /// </summary>
+        private void LoadContentThreaded()
+        {
+            if (Directory.Exists(Main.contentpath + "\\Sprites"))
+            {
+                //Load all the sprites with the following extensions.
+                string[] spriteextensions = { ".xml", ".sprite.gmx", ".json" };
+
+                foreach (string file in Directory.GetFiles(Main.contentpath + "\\Sprites", "*.*").Where(file => spriteextensions.Contains(Path.GetExtension(file).ToLower())))
+                {
+                    GMSprite.LoadSprite(file);
+                    //sprites.Add(new GMSprite(Content.Load<Texture2D>(Path.GetFileNameWithoutExtension(file)),"");
+                }
+            }
+
+            contentloaded = true;
         }
 
         /// <summary>
@@ -61,7 +99,10 @@ namespace GMSharp
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // TODO: Add your update logic here
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                GML.game_restart();
+            }
 
             base.Update(gameTime);
         }
@@ -74,7 +115,22 @@ namespace GMSharp
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            if (contentloaded || splashscreen != null)
+            {
+                spriteBatch.Begin();
+
+                if (!contentloaded)
+                {
+                    int screenwidth = GraphicsDevice.Viewport.Width, screenheight = GraphicsDevice.Viewport.Height;
+                    spriteBatch.Draw(splashscreen, new Vector2(0, -((screenwidth - screenheight) / 2)), scale: new Vector2((float)screenwidth/splashscreen.Width));
+                }
+                else
+                {
+                    //TODO
+                }
+
+                spriteBatch.End();
+            }
 
             base.Draw(gameTime);
         }
